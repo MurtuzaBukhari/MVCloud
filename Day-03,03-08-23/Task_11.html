@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function  add(num,num1){
+        let num_0= parseInt(num);
+        let num_1 = parseInt(num1);
+        var num2 = num_0+num_1;
+        let num_2 = num2.toString();
+        let mul = 1;
+        for (let index = 0; index < num_2.length; index++) {
+            let num__2 = parseInt(num_2.charAt(index));
+                 mul = mul*num__2;
+        }
+        return mul;
+    }
+    console.log(add(prompt(),prompt()))
+</script>
+</html>

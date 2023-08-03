@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var num = prompt();
+    var num1 = "";
+    // console.log(typeof(num))
+    for (let index = num.length; index >= 0; index--) {
+        num1 = num1+num.charAt(index);
+    }
+    console.log(num1)
+    if (num > num1) {
+        console.log(num+"is greater than"+num1)
+    }
+    else{
+        console.log(num+" is less than "+num1)
+    }
+</script>
+</html>

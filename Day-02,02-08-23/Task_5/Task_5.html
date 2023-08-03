@@ -86,24 +86,24 @@
     </div>
 
 </body>
-<script>
+<script type="module">
     // // Import the functions you need from the SDKs you need
-    // import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
-    // import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
-    // const firebaseConfig = {
-    //     apiKey: "AIzaSyCDg6LxBbh2UxgG0LEg64D852rx-ZfQFCk",
-    //     authDomain: "mvclouds-1e697.firebaseapp.com",
-    //     projectId: "mvclouds-1e697",
-    //     storageBucket: "mvclouds-1e697.appspot.com",
-    //     messagingSenderId: "46064883945",
-    //     appId: "1:46064883945:web:9ddcaf03d14fa1dd42b878",
-    //     measurementId: "G-XQ58C4X26R"
-    // };
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+    import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
+    const firebaseConfig = {
+        apiKey: "AIzaSyCDg6LxBbh2UxgG0LEg64D852rx-ZfQFCk",
+        authDomain: "mvclouds-1e697.firebaseapp.com",
+        projectId: "mvclouds-1e697",
+        storageBucket: "mvclouds-1e697.appspot.com",
+        messagingSenderId: "46064883945",
+        appId: "1:46064883945:web:9ddcaf03d14fa1dd42b878",
+        measurementId: "G-XQ58C4X26R"
+    };
 
     // // Initialize Firebase
-    // const app = initializeApp(firebaseConfig);
+    const app = initializeApp(firebaseConfig);
 
-    // const db = getDatabase(app);
+    const db = getDatabase(app);
     // document.addEventListener("DOMContentLoaded", function () {
         var button = document.getElementById("B1");
         button.addEventListener('click', function () {
@@ -124,3 +124,6 @@
 
 </script>
 </html>
+
+
+
