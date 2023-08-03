@@ -1,41 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Information Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/font-awesome.min.css"
+        type="text/css" />
     <style>
-        form{
+        form {
             margin-left: 30%;
             margin-right: 30%;
             padding-left: 3%;
             background-color: lightsteelblue;
-            height: 520px;
+            height: 100%;
             padding: 10px;
         }
-        #D{
-            margin-bottom: 2%;
-            height: 500px;
+
+        #D {
+            width: 96.5%;
+            background-color: aqua;
+            margin-top: 8px;
+        }
+
+        #name,
+        #mail,
+        #interest {
+            width: 490px;
+            height: 25px;
         }
     </style>
 </head>
+
 <body>
     <form action="#">
-        <h1>Candidate Info</h1>
-        <input type="text" name="" id="" placeholder="Your Name*"><br><br>
-        <input type="email" name="" id="" placeholder="Your E-mail*"><br><br>
-        <textarea name="" id="" cols="30" rows="5" placeholder="About YourSelf"></textarea><br>
+        <h1><i class='fa-solid fa-1'></i> Candidate Info </h1>
+        <input type="text" name="" id="name" placeholder="Your Name*"><br><br>
+        <input type="email" name="" id="mail" placeholder="Your E-mail*"><br><br>
+        <textarea name="" id="" cols="65" rows="5" placeholder="About YourSelf"></textarea><br>
         <h2>Interest:</h2>
-        <select name="" id="">
-            <option value=""> Fishkeeping </option>
-            <option value=""> Watching Movies </option>
-            <option value=""> Playing Footbal </option>
+        <select name="" id="interest">
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
         </select>
-        <h1>Additional Info</h1>
-        <textarea name="" id="" cols="50" rows="5" placeholder="About Your School"></textarea><br>
-         <div id="D">
-            <input type="submit">
-         </div>
+        <i class="fa fa-1"><h1>  Additional Info</h1>
+        <textarea name="" id="" cols="65" rows="5" placeholder="About Your School"></textarea><br>
+        <button id="D"> Submit </button>
     </form>
 </body>
+
 </html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        #D1{
+            animation-name: A1;
+            animation-duration: 5s;
+            animation-delay: 2s;
+            background-color: brown;
+            width: 300px;
+            height: 300px;
+        }
+        #D2{
+            animation-name: A2;
+            animation-duration: 5s;
+            animation-delay: 3s;
+            background-color: cadetblue;
+            width: 300px;
+            height: 300px;
+        }
+        #D3{
+            animation-name: A3;
+            animation-duration: 5s;
+            animation-delay: 6s;
+            background-color: gold;
+            width: 300px;
+            height: 300px;
+        }
+        #D4{
+            animation-name: A4;
+            animation-duration: 5s;
+            animation-delay: 1s;
+            background-color: green;
+            width: 300px;
+            height: 300px;
+        }
+        @keyframes A1 {
+            from{
+                background-color: aquamarine;
+            }
+            to{
+                background-color: chocolate;
+                transform: rotate(180deg);
+            }
+        }
+        @keyframes A2 {
+            from{
+                background-color: red;
+                transform: rotate(90deg);
+            }
+            to{
+                background-color: greenyellow;
+                transform:scale(2,2);
+            }
+        }
+        @keyframes A3 {
+            from{
+                background-color: teal;
+                transform:skewX(60deg);            
+            } 
+            to{
+                background-color: violet;
+                transform:rotate3d(1,1,1,60deg);
+            }
+        }
+        @keyframes A4 {
+            from{
+                background-color: salmon;
+                opacity: 0;
+            }
+            to{
+                background-color:lightcoral;
+                transform:skewY(20deg);
+                        }
+        }
+    </style>
+</head>
+<body>
+    <div id="D1"></div>
+    <hr>
+    <div id="D2"></div>
+    <hr>
+    <div id="D3"></div>
+    <hr>
+    <div id="D4"></div>
+</body>
+</html>
