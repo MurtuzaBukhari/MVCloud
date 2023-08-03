@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form Design</title>
+    <link rel="stylesheet" href="Task_2.css">
+</head>
+
+<body>
+
+    <div class="Container">
+    <form action="#">
+        <div class="D1">
+            <h1>Create Account</h1>
+        </div>
+
+        <div class="D2">
+            <div class="D21">
+                <h3>First Name* </h3> <input type="text" placeholder="Enter Your First Name" id="fname">
+            </div>
+            <div class="D22">
+                <h3>Last Name </h3> <input type="text" placeholder="Enter Your Last Name" id="lname">
+            </div>
+        </div>
+        <div class="D3">
+            <h3>Email*</h3>
+            <input type="email" placeholder="Enter Your Email " id="mail">
+        </div>
+        <div class="D4">
+            <div class="D41">
+                <h3>Password* </h3> <input type="password" placeholder="Enter Your Password" id="pass">
+            </div>
+            <div class="D42">
+                <h3>Confirm Password* </h3> <input type="password" placeholder="Enter Your Password" id="passagain">
+            </div>
+        </div>
+        <div class="D5">
+            <div class="D51">
+                <h3>Gender</h3>
+                <h2><input type="radio" name="gender" id="R1"> Male<input type="radio" name="gender" id="R2"> Female
+                </h2>
+            </div>
+            <div class="D52">
+                <h3>Hobbies</h3>
+                <h2><input type="checkbox" name="" id="C1">Music
+                    <input type="checkbox" name="" id="C2">Sports
+                    <input type="checkbox" name="" id="C3"> Travel
+                    <input type="checkbox" name="" id="C4">Movies
+                </h2>
+            </div>
+        </div>
+        <div class="D6">
+            <div class="D61">
+                <h3>Source Of Income</h3>
+                <select name="" id="">
+                    <option value="">Employed</option>
+                    <option value="">Studen</option>
+                </select>
+            </div>
+            <div class="D62">
+                <h3>Income</h3>
+                <h3>
+                    <input type="range" value="0"> <input type="text" placeholder="" value="20K" id="price">
+                </h3>
+            </div>
+        </div>
+        <div class="D7">
+            <div class="D71">
+                <h3>Upload profile Picture</h3> <input type="file">
+            </div>
+            <div class="D72">
+                <h3>Age</h3> <input type="number" value="18">
+            </div>
+        </div>
+        <div class="D8">
+            <h3>Bio</h3>
+            <textarea name="" id="TA" cols="30" rows="10"></textarea>
+        </div>
+        <div class="D9">
+        <button id="B1">Create</button>
+        </div>
+    </form>
+</div>
+</body>
+
+</html>
