@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function string(str) {
+        let str0 = '';
+        for (let i = 0; i < str.length; i++) {
+            let str_1 = str.charAt(i);
+            const str_2 = str_1.charCodeAt(0);
+
+            if (str_2 % 2 === 0) {
+                str0 += str_1.toUpperCase();
+            } else {
+                str0 += str_1.toLowerCase();
+            }
+        }
+
+        return str0;
+    }
+    var str = string(prompt());
+    console.log(str);
+
+</script>
+
+</html>
