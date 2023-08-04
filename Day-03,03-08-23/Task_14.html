@@ -9,12 +9,12 @@
     
 </body>
 <script>
-    var num =prompt();
-    let array = [];
-    for (let index = 0; index < num.length; index++) {
-        array[index] = num.charAt(index);
+    function number(str) {
+      var numbers = str.split(' ').map(Number);
+      return Math.max(...numbers) + ' ' + Math.min(...numbers);
     }
-    
-    console.log(array)
-</script>
+    var str = "10 5 64 2 88 36 74";
+    var result = number(str);
+    console.log(result);
+  </script>
 </html>

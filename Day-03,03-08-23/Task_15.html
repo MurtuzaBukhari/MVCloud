@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            margin-top: 20%;
+            margin-left: 40%;
+            width: 60%;
+            height: 80%;
+        }
+
+        #D1,
+        #D2,
+        #D3,
+        #D4,
+        #D5 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #B2,
+        #B3,
+        #B4,
+        #B5,
+        #B6,
+        #B7,
+        #B8,
+        #B9,
+        #B10,
+        #B11,
+        #B12,
+        #B13,
+        #B14,
+        #B15,
+        #B16,
+        #B17 {
+            width: 51px;
+            height: 28px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#">
+        <div id="D1">
+            <div id="D11">
+                <input type="text" id="textBox1">
+            </div>
+            <div id="D12">
+                <button onclick="clearText()">C</button>
+            </div>
+        </div>
+        <div id="D2">
+            <div id="D21">
+                <button onclick="appendText('7')" id="B2">7</button>
+            </div>
+            <div id="D22">
+                <button onclick="appendText('8')" id="B3">8</button>
+            </div>
+            <div id="D23">
+                <button onclick="appendText('9')" id="B4">9</button>
+            </div>
+            <div id="D24">
+                <button onclick="operation('+')" id="B5">+</button>
+            </div>
+        </div>
+        <div id="D3">
+            <div id="D31">
+                <button onclick="appendText('4')" id="B6">4</button>
+            </div>
+            <div id="D32">
+                <button onclick="appendText('5')" id="B7">5</button>
+            </div>
+            <div id="D33">
+                <button onclick="appendText('6')" id="B8">6</button>
+            </div>
+            <div id="D34">
+                <button onclick="operation('-')" id="B9">-</button>
+            </div>
+        </div>
+        <div id="D4">
+            <div id="D41">
+                <button onclick="appendText('1')" id="B10">1</button>
+            </div>
+            <div id="D42">
+                <button onclick="appendText('2')" id="B11">2</button>
+            </div>
+            <div id="D43">
+                <button onclick="appendText('3')" id="B12">3</button>
+            </div>
+            <div id="D44">
+                <button onclick="operation('*')" id="B13">*</button>
+            </div>
+        </div>
+        <div id="D5">
+            <div id="D51">
+                <button onclick="appendText('0')" id="B14">0</button>
+            </div>
+            <div id="D52">
+                <button onclick="appendText('.')" id="B15">.</button>
+            </div>
+            <div id="D53">
+                <button onclick="solve()" id="B16">=</button>
+            </div>
+            <div id="D54">
+                <button onclick="operation('/')" id="B17">/</button>
+            </div>
+        </div>
+
+    </form>
+</body>
+<script>
+    let n1 = "";
+    let n2 = "";
+    let res = "";
+    let op = '';
+
+    function appendText(text) {
+        let textBox = document.getElementById('textBox1');
+        textBox.value += text;
+    }
+
+    function clearText() {
+        let textBox = document.getElementById('textBox1');
+        textBox.value = '';
+    }
+
+    function operation(operator) {
+        let textBox = document.getElementById('textBox1');
+        n1 = parseInt(textBox.value);
+        op = operator;
+        textBox.value = '';
+    }
+
+    function solve() {
+        let textBox = document.getElementById('textBox1');
+        n2 = parseFloat(textBox.value);
+        if (op == '+') {
+            res = n1 + n2;
+        }
+        else if (op == '-') {
+            res = n1 - n2;
+        }
+        else if (op == '*') {
+            res = n1 * n2;
+        }
+        else if (op == '/') {
+            res = n1 / n2;
+        }
+        textBox.value = res;
+        console.log(n1+n2)
+    }
+</script>
+
+</html>
