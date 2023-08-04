@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Current time</h2>
+    <input type="text" id="I1" style="width: 500px;">
+    <h2>Lunch Time</h2>
+    <input type="text" id="I2" style="width: 500px;">
+    <button onclick="change()"> submit</button>
+    <!-- <h2>Days Remainig</h2> -->
+    <p id="B1"></p>
+</body>
+<script>
+    let b1 = document.getElementById("B1");
+    let i1 = document.getElementById("I1");
+    let i2 = document.getElementById("I2");
+    var d = new Date();
+    let b = d.getHours();
+    i1.value = d;
+    let p =prompt("Set time");
+    let a =d.setHours(p);
+    i2.value=d;
+    console.log(typeof(d))
+    function change(){
+        // var t = new Date('August 4, 2023');
+        let r = p - b;
+        console.log(r)
+        // let s = t.setDate(r);
+        b1.innerHTML=" Time Remainig : "+r +" Hours";
+
+    }
+</script>
+</html>
