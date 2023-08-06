@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <p> Select the required file in the device </p>  
-    <input onchange = "readFileFunction(this)" type = "file">  
+    <p> Select the required file in the device </p>
+    <input onchange="readFileFunction(this)" type="file">
     <h2>File text </h2>
     <!-- <p id="B"></p> -->
     <input type="text" id="B">
-    <button id="C"> push</button>
+
 </body>
-<script>  
-let b = document.getElementById("B");
-let c = document.getElementById("C");
-function readFileFunction(input_var) {  
-    let file_var = input_var.files[0];  
-    let fileReader_var = new FileReader();  
-fileReader_var.readAsText(file_var);  
+<script>
+    let b = document.getElementById("B");
+    let c = document.getElementById("C");
+    function readFileFunction(input_var) {
+        let file_var = input_var.files[0];
+        let fileReader_var = new FileReader();
+        fileReader_var.readAsText(file_var);
 
-fileReader_var.onload = function() {
-        var str1 = fileReader_var.result;
-        
-        b.value=str1;
-    };  
-    fileReader_var.onerror = function() {  
-        alert(fileReader_var.error);  
-    };  
-}  
-c.addEventListener("",function () {
-            let str = b.value;
-            // console.log(str)
-            // let arr = str.splite("");      
-});
-    for (let index = 0; index < str.length; index++) {
-                if (str.carAt(index)===str.carAt(index+1)) {
-                    console.log(index)
+        fileReader_var.onload = function () {
+            var str1 = fileReader_var.result;
+            b.value = fileReader_var.result;
+            for (let i = 0; i < str1.length; i++) {
+                // console.log(str.charAt(i))
+                for (let j = 1; j >= i; j++) {
+                    // console.log(i)
+                    if (str1.charAt(i) == str1.charAt(j)) {
+                        let str = str1.charAt(i);
+                        var dic={}
+                        dic[str]="["+i+ " "+ j+"]";
+                        console.log(dic)
+                        // console.log(str1.charAt(i) + "[" + i + "," + j + "]")
+                    }
                 }
-            
             }
+        };
+        fileReader_var.onerror = function () {
+            alert(fileReader_var.error);
+        };
+    }
 
 
-</script>  
+
+
+</script>
+
 </html>
