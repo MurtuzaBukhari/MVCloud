@@ -1,11 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> Javascript filereader </title>
 </head>
+
 <body>
-    
+
+    <!-- <p> Select the required file in the device </p>
+    <input onchange="readFileFunction(this)" type="file">
+    <p id="P"></p> -->
+    <input type="file">
+    <table border="2">
+        <thead>
+            <tr>
+                <td>
+                    Images
+                </td>
+                <!-- <td>
+                    DOWNLOADS
+                </td> -->
+                
+            </tr>
+        </thead>
+        
+    </table>
+
+    <script>
+
+
+        const x = document.querySelector("input");
+        x.addEventListener("change", () => {
+            const fr = new FileReader();
+            fr.onloadend = e => {
+                let r = fr.result.split("\n").map(e => {
+                    return e.split(",");
+
+                })
+                r.forEach(e => {
+                    let m = e.map(e => {
+                        return `<td> <a href="${e}" download> <img src="${e}" > </a> </td> `;
+                    }).join("")
+                    const ce = document.createElement("tr");
+                    ce.innerHTML = m;
+                    if (ce.innerHTML !== "") {
+                        document.querySelector("table").append(ce)
+                    }
+                })
+                
+            }
+            fr.readAsText(x.files[0])
+        })
+    </script>
 </body>
+
 </html>
