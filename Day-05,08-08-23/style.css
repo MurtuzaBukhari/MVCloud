@@ -86,17 +86,23 @@ body{
         
         @media (max-width:800px) {
             #games,#newreleases,#popular{
-                grid-template-columns: auto auto auto;
+                /* grid-template-columns: auto auto auto; */
+                display: flexbox;
+                overflow-x: auto;
             }
         }
         @media (max-width:500px) {
             #games,#newreleases,#popular{
-                grid-template-columns:  auto auto;
+                /* grid-template-columns:  auto auto; */
+                display: flexbox;
+                overflow-x: auto;
             }
         }
         @media (max-width:300px) {
             #games,#newreleases,#popular{
-                grid-template-columns:  auto;
+                /* grid-template-columns:  auto; */
+                display: flexbox;
+                overflow-x: auto;
             }
         }
         #D1 {
@@ -136,7 +142,7 @@ body{
             background-repeat: no-repeat;
             background-size: cover;
         }#D9 {
-            background-image: url(/Day-05,08-08-23/Images/game_img_9.jpg);
+            background-image: url(/Day-05,08-08-23/Images/game_img_17.jpg);
             background-repeat: no-repeat;
             background-size: cover;
         }#D10 {

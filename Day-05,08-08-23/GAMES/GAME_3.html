@@ -1,11 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        hr {
+            width: 500px;
+            height: 3px;
+            background-color: black;
+        }
+        button{
+            width: 200px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h1>
+        EAT THE DOT
+    </h1>
+    <hr>
+    <canvas id="graph"></canvas>
+
+    <a href="/Day-05,08-08-23/Web_game.html"><button id="BTU">QUIT GAME</button></a>
+    <script>
+        var size = 25;
+        var rows = 18;
+        var cols = 18;
+        var graph;
+        var con;
+
+        var sx = 2 * size;
+        var sy = 5 * size;
+
+        var vx = 0;
+        var vy = 0;
+        var over = false;
+        var fx;
+        var fy;
+        var sbody = [];
+
+        window.onload = function () {
+            graph = document.getElementById("graph");
+            graph.height = rows * size;
+            graph.width = cols * size;
+            con = graph.getContext("2d");
+            change();
+            setInterval(update, 1000 / 10);
+            document.addEventListener("keyup", direction);
+        }
+
+        function update() {
+            if (over) {
+                return;
+            }
+            con.fillStyle = "grey";
+            con.fillRect(0, 0, graph.width, graph.height);
+
+            con.fillStyle = "red";
+            con.fillRect(fx, fy, size, size);
+
+            if (sx == fx && sy == fy) {
+                sbody.push([fx, fy]);
+                change();
+            }
+            for (let index = sbody.length - 1; index > 0; index--) {
+                sbody[index] = sbody[index - 1];
+            }
+            if (sbody.length) {
+                sbody[0] = [sx, sy];
+            }
+
+            con.fillStyle = "green";
+            sx += vx * size;
+            sy += vy * size;
+            con.fillRect(sx, sy, size, size);
+            for (i = 0; i < sbody.length; i++) {
+                con.fillRect(sbody[i][0], sbody[i][1], size, size);
+            }
+
+            if (sx < 0 || sx > cols * size || sy < 0 || sy > rows * size) {
+                over = true;
+                alert("GAME OVER")
+            }
+
+            for (let index = 0; index < sbody.length; index++) {
+                if (sx == sbody[index][0] && sy == sbody[index][1]) {
+                    over = true;
+                    alert("GAME OVER")
+                }
+            }
+
+
+        }
+        function direction(e) {
+            if (e.code == "ArrowUp" && vy != 1) {
+                vx = 0;
+                vy = -1;
+            }
+            else if (e.code == "ArrowDown" && vy != -1) {
+                vx = 0;
+                vy = 1;
+            }
+            else if (e.code == "ArrowLeft" && vx != 1) {
+                vx = -1;
+                vy = 0;
+            }
+            else if (e.code == "ArrowRight" && vx != -1) {
+                vx = 1;
+                vy = 0;
+            }
+        }
+
+        function change() {
+            fx = Math.floor(Math.random() * cols) * size;
+            fy = Math.floor(Math.random() * rows) * size;
+        }
+    </script>
 </body>
+
 </html>
