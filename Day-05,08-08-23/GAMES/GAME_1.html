@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCK-PAPER-SCISSORS</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            background-color: gray;
+        }
+
+        #op_img {
+            width: 210px;
+            height: 210px;
+            margin-top: 5px;
+            /* background-color: red; */
+            margin: 0 auto;
+        }
+
+        #pl_img {
+            width: 210px;
+            height: 210px;
+            margin-top: 5px;
+            /* background-color:green; */
+            margin: 0 auto;
+        }
+
+        #pl_choice {
+            width: 210px;
+            height: 70px;
+            margin-top: 5px;
+            /* background-color: yellowgreen; */
+            margin: 0 auto;
+        }
+
+        #pl_choice img {
+            margin-left: 5px;
+            width: 60px;
+            height: 60px;
+        }
+        button{
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="result"></h1>
+    
+    <h2 id="op_score"> 0</h2>
+    <img id="op_img">
+
+    <img id="pl_img">
+    <div id="pl_choice">
+
+    </div>
+
+    <h2 id="pl_score">0</h2>
+    <button id="BTU">QUIT GAME</button>
+    <script>
+        var player;
+        var player_score = 0;
+        var opponent;
+        var opponent_score = 0;
+
+        var choice = ["Rock", "Paper", "Scissors"];
+
+        window.onload = function () {
+            for (let index = 0; index < 3; index++) {
+                let choices = document.createElement("img");
+                choices.id = choice[index];
+                choices.src = choice[index] + ".png";
+                document.getElementById("pl_choice").append(choices);
+                choices.addEventListener("click", pla_choice);
+            }
+        }
+        function pla_choice() {
+            player = this.id;
+            document.getElementById("pl_img").src = player + ".png";
+            opponent = choice[Math.floor(Math.random() * 2)];
+            document.getElementById("op_img").src = opponent + ".png";
+
+            if (player == opponent) {
+                player_score = player_score + 1;
+                opponent_score = opponent_score + 1
+            }
+            else {
+                if (player == "Paper") {
+                    if (opponent == "Rock") {
+                        player_score = player_score + 1;
+                    }
+                    else if (opponent == "Scissors") {
+                        opponent_score = opponent_score + 1;
+                    }
+                }
+                else if (player == "Scissors") {
+                    if (opponent == "Paper") {
+                        player_score = player_score + 1;
+                    }
+                    else if (opponent == "Rock") {
+                        opponent_score = opponent_score + 1;
+                    }
+                }
+                else if (player == "Rock") {
+                    if (opponent == "Scissors") {
+                        player_score = player_score + 1;
+                    }
+                    else if (opponent == "Paper") {
+                        opponent_score = opponent_score + 1;
+                    }
+                }
+            }
+            document.getElementById("op_score").innerHTML = "Opponent Score :"+opponent_score;
+            document.getElementById("pl_score").innerHTML = "Player Score :"+player_score;
+            
+        }
+        var btu = document.getElementById("BTU");
+        btu.addEventListener("click",function () {
+            location.replace("http://127.0.0.1:5501/Day-05,08-08-23/Web_game.html");
+            window.history.back();
+        });
+
+    </script>
+</body>
+
+</html>
