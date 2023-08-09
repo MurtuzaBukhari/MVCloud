@@ -9,14 +9,13 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
-            background-color: gray;
         }
 
         #op_img {
             width: 210px;
             height: 210px;
             margin-top: 5px;
-            /* background-color: red; */
+            background-color: red;
             margin: 0 auto;
         }
 
@@ -24,7 +23,7 @@
             width: 210px;
             height: 210px;
             margin-top: 5px;
-            /* background-color:green; */
+            background-color:green;
             margin: 0 auto;
         }
 
@@ -32,7 +31,7 @@
             width: 210px;
             height: 70px;
             margin-top: 5px;
-            /* background-color: yellowgreen; */
+            background-color: yellowgreen;
             margin: 0 auto;
         }
 
@@ -41,8 +40,7 @@
             width: 60px;
             height: 60px;
         }
-
-        button {
+        button{
             width: 200px;
         }
     </style>
@@ -50,19 +48,15 @@
 
 <body>
     <h1 id="result"></h1>
-
-    <h2 id="op_score"> 0</h2>
+    <h2 id="op_score">0</h2>
     <img id="op_img">
 
     <img id="pl_img">
     <div id="pl_choice">
 
     </div>
-
     <h2 id="pl_score">0</h2>
-    <a href="/Day-05,08-08-23/Web_game.html">
-        <button id="BTU">QUIT GAME</button>
-    </a>
+    <button id="BTU">QUIT GAME</button>
     <script>
         var player;
         var player_score = 0;
@@ -116,14 +110,13 @@
                     }
                 }
             }
-            document.getElementById("op_score").innerHTML = "Opponent Score :" + opponent_score;
-            document.getElementById("pl_score").innerHTML = "Player Score :" + player_score;
-
+            document.getElementById("op_score").innerHTML = opponent_score;
+            document.getElementById("pl_score").innerHTML = player_score;
+            
         }
         // var btu = document.getElementById("BTU");
-        // btu.addEventListener("click",function () {
-        //     location.replace("http://127.0.0.1:5501/Day-05,08-08-23/Web_game.html");
-        //     window.history.back();
+        // btu.addEventListener("click",function(){
+        //     location.replace("http://127.0.0.1:5501/Day-05,08-08-23/Web_game.html")
         // });
 
     </script>
