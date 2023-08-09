@@ -1,32 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
-    <h2>Consecutive ascending Numbers</h2>
-    <p id="B"></p>
+
 </body>
 <script>
-    // let b = document.getElementById("B");
-    // var array = [];
-    // var size =prompt("How Many numbers you need to add")
-    // for (let index = 0; index < size; index++) {
-    //     array[index] = prompt("Enter number :"+(index+1));
-    // }
-    // let arr = array.sort(function(a,b){return a-b;});
-    // arr.toString()
-    // b.innerHTML=arr;
-    // // arr.slice("")
-    // arr.join(" ")
-    // console.log(typeof(array))
-        function sub(a,b){
-            return a-b;
-        }
-        Array = ["10","20","13","5","6"];
-        // console.log(Array.sort(sub(a,b)))
-        console.log(sub(Array[0],Array[1]))
+  var str = "12375689";
+//  let str1 = str.split(",");
+//   console.log(str1)
+  var array = [];
+  for (let index = 0; index < str.length; index++) {
+      array[index] = str.charAt(index);
+  }
+  
+  array.sort()
+    array.toString()
+    console.log(array.join(""))
 </script>
+
 </html>

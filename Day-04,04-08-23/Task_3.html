@@ -20,17 +20,23 @@
     let i2 = document.getElementById("I2");
     var d = new Date();
     let b = d.getDate();
+    let b_1 = d.getMonth();
     i1.value = d;
     let p =prompt("Set Date");
+    let p_1 = prompt("Set Months");
     let a =d.setDate(p);
+    let a_1 = d.setMonth(p_1-1);
+    console.log(a_1)
+    console.log(b_1)
     i2.value=d;
     console.log(typeof(d))
     function change(){
         // var t = new Date('August 4, 2023');
         let r = p - b;
-        console.log(r)
+        let r_1=p_1-b_1;
+        // console.log(r)
         // let s = t.setDate(r);
-        b1.innerHTML=" Days Remainig : "+r;
+        b1.innerHTML="  Remainig : "+r+"Days "+(r_1-1)+"Months ";
 
     }
 </script>

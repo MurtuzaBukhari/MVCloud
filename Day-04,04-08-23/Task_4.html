@@ -1,37 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h2>Current time</h2>
     <input type="text" id="I1" style="width: 500px;">
     <h2>Lunch Time</h2>
+    <input type="text" id="I3" style="width: 500px;" placeholder="Enter Hours">
+    <input type="text" id="I4" style="width: 500px;" placeholder="Enter Minutes">
     <input type="text" id="I2" style="width: 500px;">
+    <!-- <input type="time"> -->
     <button onclick="change()"> submit</button>
-    <!-- <h2>Days Remainig</h2> -->
+    <h2>Days Remainig</h2>
     <p id="B1"></p>
+    <!-- <p id="B2"></p>
+    <input type="time" id="Tm">
+    <p id="B3"></p>
+    <input type="time" id="Tm1">
+    <p id="B4"></p> -->
 </body>
 <script>
     let b1 = document.getElementById("B1");
+    let b2 = document.getElementById("B2");
+    let b3 = document.getElementById("B3");
+    let b4 = document.getElementById("B4");
     let i1 = document.getElementById("I1");
     let i2 = document.getElementById("I2");
+    let t =  document.getElementById("Tm");
+    let t1 =  document.getElementById("Tm1");   
+
     var d = new Date();
     let b = d.getHours();
+    let b_1 = d.getMinutes();
     i1.value = d;
-    let p =prompt("Set time");
-    let a =d.setHours(p);
-    i2.value=d;
-    console.log(typeof(d))
-    function change(){
+
+    // console.log(typeof (d))
+    function change() {
+    //     let t_1=t.value;
+    //     let t_2=t1.value;
+    //    t_1 = parseInt(t_1);
+    //    t_2 = parseInt(t_2);
+    //    let a1 = d.setTime(t_1);
+    //    let a2 = d.setTime(t_2);
+    //    console.log(a1*60)
+    //    console.log(a2*60)
+    //     console.log(t_2-t_1)
+        let p = document.getElementById("I3").value;
+        let p_1 = document.getElementById("I4").value;
+        let a = d.setHours(p);
+        let a_1 = d.setMinutes(p_1);
+        i2.value = d;
         // var t = new Date('August 4, 2023');
         let r = p - b;
-        console.log(r)
+        // console.log(r)
+        let r_1 = p_1 - b_1;
         // let s = t.setDate(r);
-        b1.innerHTML=" Time Remainig : "+r +" Hours";
+        b1.innerHTML = " Time Remainig : " + r + " Hours" + " " + r_1 + "Min";
 
     }
 </script>
+
 </html>

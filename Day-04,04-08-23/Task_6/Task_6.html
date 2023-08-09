@@ -24,21 +24,22 @@
         fileReader_var.readAsText(file_var);
 
         fileReader_var.onload = function () {
-            var str1 = fileReader_var.result;
             b.value = fileReader_var.result;
+            var str1 = fileReader_var.result;
             for (let i = 0; i < str1.length; i++) {
                 // console.log(str.charAt(i))
-                for (let j = 1; j >= i; j++) {
+                for (let j = i+1; j < str1.length; j++) {
                     // console.log(i)
                     if (str1.charAt(i) == str1.charAt(j)) {
                         let str = str1.charAt(i);
-                        var dic={}
-                        dic[str]="["+i+ " "+ j+"]";
+                        var dic = {}
+                        dic[str] = "[" + i + " " + j + "]";
                         console.log(dic)
                         // console.log(str1.charAt(i) + "[" + i + "," + j + "]")
                     }
                 }
             }
+            
         };
         fileReader_var.onerror = function () {
             alert(fileReader_var.error);

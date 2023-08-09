@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+body{
+    background-color: black;
+}
+    *{
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+        box-sizing: border-box;
+        list-style: none;
+        text-decoration: none;
+        scroll-padding-top: 2rem;
+    }
+    :root{
+        --main-color:#fa5353;
+        
+        --light-color:#322f40;
+        
+        
+    }
+    img{
+        width: 100%;
+        color: white;
+        background-color: #1b182b;
+    }
+    .home{
+        position: relative;
+        min-height: 540px;
+        display: flex;
+        justify-content: flex-end;
+        text-align: center;
+        margin-top: 5rem;
+    }
+    .home img{
+     position: absolute;
+     width: 100%;
+     height: 100%;
+    z-index: -1;   
+    }
+    .home-text{
+        margin-top: 200px;
+        margin-right: 5%;
+        color: black;
+        font-size: 25px;
+    }
+    /* #games,#newreleases,#popular{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        overflow-x: auto;
+        
+       }
+        #D1,#D2,#D3,#D4,#D5,#D6,#D7,#D8,#D9,#D10,#D11,#D12,#D13,#D14,#D15{
+            height: 250px;
+            width: 18%;
+            margin-left: 2%;
+            background-color: red;
+        } */
+    .box img{
+        margin-left: 2%;
+        width: 200px;
+    }
+    .box-text{
+        margin-left: 2%;
+    }
+    #play h1{
+        color: white;
+    }
+    #games,#newreleases,#popular{
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        column-gap: 20px;
+       }
+        #D1,#D2,#D3,#D4,#D5,#D6,#D7,#D8,#D9,#D10,#D11,#D12,#D13,#D14,#D15{
+            height: 250px;
+            margin-top: 20px;
+            /* width: auto; */
+            /* background-color: red; */
+            background-color: red;
+        }
+        #play h1 {
+            color: white;
+        }
+        
+        
+        @media (max-width:800px) {
+            #games,#newreleases,#popular{
+                grid-template-columns: auto auto auto;
+            }
+        }
+        @media (max-width:500px) {
+            #games,#newreleases,#popular{
+                grid-template-columns:  auto auto;
+            }
+        }
+        @media (max-width:300px) {
+            #games,#newreleases,#popular{
+                grid-template-columns:  auto;
+            }
+        }
+        #D1 {
+            background-image: url(/Day-05,08-08-23/Images/game_img_1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #D2 {
+            background-image: url(/Day-05,08-08-23/Images/game_img_2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }#D3 {
+            background-image: url(/Day-05,08-08-23/Images/game_img_3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }#D4 {
+            background-image: url(/Day-05,08-08-23/Images/game_img_4.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }#D5 {
+            background-image: url(/Day-05,08-08-23/Images/game_img_5.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #D6 {
+            background-image: url(/Day-05,08-08-23/Images/game_img_6.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #D7 {
+            background-image: url(/Day-05,08-08-23/Images/game_img_7.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #D8 {
+            background-image: url(/Day-05,08-08-23/Images/game_img_8.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }#D9 {
+            background-image: url(/Day-05,08-08-23/Images/game_img_9.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }#D10 {
+            background-image: url(/Day-05,08-08-23/Images/game_img_10.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #D11 {
+            background-image: url(/Day-05,08-08-23/Images/game_img_11.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #D12 {
+            background-image: url(/Day-05,08-08-23/Images/game_img_12.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #D13 {
+            background-image: url(/Day-05,08-08-23/Images/game_img_13.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #D14 {
+            background-image: url(/Day-05,08-08-23/Images/game_img_14.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #D15 {
+            background-image: url(/Day-05,08-08-23/Images/game_img_15.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #B5 {
+            width: 60%;
+            /* background-color: cyan; */
+            /* padding-left: 40%; */
+            margin-bottom: 1%;
+            margin-left: 20%;
+            height: 40px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        #para{
+            margin-top: 20px;
+        }
