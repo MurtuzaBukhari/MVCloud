@@ -1,11 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        hr {
+            width: 500px;
+            height: 3px;
+            background-color: black;
+        }
+
+        #D {
+            width: 390px;
+            height: 390px;
+            /* background-color: rebeccapurple; */
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            width: 127px;
+            height: 127px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 150px;
+        }
+
+        .hl {
+            border-bottom: 3px solid black;
+        }
+
+        .vl {
+            border-right: 3px solid black;
+        }
+
+        .win {
+            background-color: lavender;
+            color: red;
+        }
+        button{
+            width: 200px;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h1>TIC TAC TOE</h1>
+    <hr>
+    <br>
+
+    <div id="D"></div>
+
+    <h1>
+        <p id="play">PLAYER X</p>
+    </h1>
+    <a href="/Day-05,08-08-23/Web_game.html"><button id="BTU">QUIT GAME</button></a>
+    <script>
+        var boxes;
+        var play_O = "O";
+        var play_X = "X";
+        var start = play_X;
+        var over = false;
+
+        window.onload = function () {
+            game();
+        }
+        function game() {
+            boxes = [[" ", " ", " "],
+            [" ", " ", " "],
+            [" ", " ", " "]]
+
+            for (row = 0; row < 3; row++) {
+                for (col = 0; col < 3; col++) {
+                    let box = document.createElement("div");
+                    box.id = row.toString() + "-" + col.toString();
+                    box.classList.add("box");
+                    if (row == 0 || row == 1) {
+                        box.classList.add("hl");
+                    }
+                    if (col == 0 || col == 1) {
+                        box.classList.add("vl");
+                    }
+                    box.addEventListener("click", input);
+                    document.getElementById("D").append(box);
+                }
+            }
+        }
+        function input() {
+            if (over) {
+                return;
+            }
+            let mark = this.id.split("-")
+            let row = parseInt(mark[0]);
+            let col = parseInt(mark[1]);
+
+            if (boxes[row][col] != " ") {
+                return;
+            }
+            boxes[row][col] = start;
+            this.innerText = start;
+            if (start == play_X) {
+                let p = document.getElementById("play")
+                p.innerHTML = "PLAYER 0";
+                start = play_O;
+            }
+            else {
+                let p = document.getElementById("play")
+                p.innerHTML = "PLAYER X";
+                start = play_X;
+            }
+            winner();
+        }
+        function winner() {
+            for (row = 0; row < 3; row++) {
+                if (boxes[row][0] == boxes[row][1] && boxes[row][1] == boxes[row][2] && boxes[row][0] != " ") {
+                    for (let index = 0; index < 3; index++) {
+                        let box = document.getElementById(row.toString() + "-" + index.toString());
+                        box.classList.add("win");
+                    }
+                    over = true;
+                    return;
+                }
+            }
+            for (col = 0; col < 3; col++) {
+                if (boxes[0][col] == boxes[1][col] && boxes[1][col] == boxes[2][col] && boxes[0][col] != " ") {
+                    for (let index = 0; index < 3; index++) {
+                        let box = document.getElementById(index.toString() + "-" + col.toString());
+                        box.classList.add("win");
+                    }
+                    over = true;
+                    return;
+                }
+            }
+            if (boxes[0][0] == boxes[1][1] && boxes[1][1] == boxes[2][2] && boxes[0][0] != " ") {
+                for (let index = 0; index < 3; index++) {
+                    let box = document.getElementById(index.toString() + "-" + index.toString());
+                    box.classList.add("win");
+                }
+                over = true;
+                return;
+            }
+            if (boxes[0][2] == boxes[1][1] && boxes[1][1] == boxes[2][0] && boxes[0][2] != " ") {
+
+                let box = document.getElementById("0-2");
+                box.classList.add("win");
+                box = document.getElementById("1-1");
+                box.classList.add("win");
+                box = document.getElementById("2-0");
+                box.classList.add("win");
+                over = true;
+                return;
+            }
+            
+        }
+
+
+    </script>
 </body>
+
 </html>
