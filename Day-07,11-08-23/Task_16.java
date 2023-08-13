@@ -1,34 +1,29 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class Task_16 {
-    public static void main(String[] args) {
-        // int count=0;
-        // for (int i = 1; i <=6; i++) {
-        // for (int j = 1; j <=6; j++) {
-        // if( i+j == 7){
-        // count++;
-        // }
-        // }
-        // }
-        // System.out.println(count);
 
-        Random ram = new Random();
-        Scanner sc = new Scanner(System.in);
-        System.out.println("the number of dice rolled");
-        int num_1 = sc.nextInt();
-        System.out.println("the outcome of the roll");
-        int num_2 = sc.nextInt();
-        int sum = 0;
-        int count = 0;
-        for (int i = 0; i < num_1; i++) {
-            int num = ram.nextInt(1,7);
-            sum = sum + num;
-            System.out.println(num);
-            if (sum == num_2) {
-                count++;
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of dice: ");
+        int num_1 = scanner.nextInt();
+
+        System.out.print("Enter the output: ");
+        int num_2 = scanner.nextInt();
+
+        int[][] array = new int[num_1 + 1][num_2 + 1];
+        array[0][0] = 1;
+
+        for (int i = 1; i <= num_1; i++) {
+            for (int j = 1; j <= num_2; j++) {
+                for (int k = 1; k <= 6 && k <= j; k++) {
+                    array[i][j] += array[i - 1][j - k];
+                }
             }
         }
-        System.out.println(count);
 
+        System.out.println("Number of combinations: " + array[num_1][num_2]);
+
+        scanner.close();
     }
 }
