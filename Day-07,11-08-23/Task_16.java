@@ -21,14 +21,14 @@ public class Task_16 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter the number of dice: ");
+        System.out.print("Enter dice roll: ");
         int num_1=sc.nextInt();
 
-        System.out.print("Enter the desired outcome: ");
+        System.out.print("Enter the outcome: ");
         int num_2 = sc.nextInt();
 
         int waysToGetOutcome = countWays(num_1, num_2);
-        System.out.println("Number of ways to get the outcome: " + waysToGetOutcome);
+        System.out.println("output : " + waysToGetOutcome);
 
         sc.close();
     }
