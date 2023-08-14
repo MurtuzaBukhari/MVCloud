@@ -11,11 +11,12 @@ public class Task_16 {
             return 1;
         }
 
-        int ways = 0;
+        int num_4 = 0;
         for (int i = 1; i <= 6; i++) {
-            ways +=meth(num_1 - 1, num_2 - i);
+
+            num_4 = num_4 + meth(num_1 - 1, num_2 - i);
         }
-        return ways;
+        return num_4;
     }
 
     public static void main(String[] args) {
