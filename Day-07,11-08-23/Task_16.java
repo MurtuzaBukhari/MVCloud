@@ -2,7 +2,7 @@
 import java.util.Scanner;
 
 public class Task_16 {
-    public static int countWays(int num_1, int num_2) {
+    public static int meth(int num_1, int num_2) {
         if (num_2 < num_1 || num_2 > num_1 * 6) {
             return 0;
         }
@@ -13,7 +13,7 @@ public class Task_16 {
 
         int ways = 0;
         for (int i = 1; i <= 6; i++) {
-            ways += countWays(num_1 - 1, num_2 - i);
+            ways +=meth(num_1 - 1, num_2 - i);
         }
         return ways;
     }
@@ -27,8 +27,8 @@ public class Task_16 {
         System.out.print("Enter the outcome: ");
         int num_2 = sc.nextInt();
 
-        int waysToGetOutcome = countWays(num_1, num_2);
-        System.out.println("output : " + waysToGetOutcome);
+        int num_3 = meth(num_1, num_2);
+        System.out.println("output : " + num_3);
 
         sc.close();
     }
